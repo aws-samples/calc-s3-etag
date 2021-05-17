@@ -1,5 +1,5 @@
-// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
-// SPDX-License-Identifier: MIT-0
+#// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+#// SPDX-License-Identifier: MIT-0
 
 import sys
 import hashlib
@@ -30,5 +30,6 @@ if len(sys.argv) !=3:
     print("aws s3api head-object --bucket {bucketname} --key \"[prefix/]{objectname}\" --endpoint-url {url to SBE device including port}")
     print("take the resulting content length and divide it by the number after the dash in the Etag.  Take that result and divide it by 1048576")
     print("the result will be slightly below the multi-part transfer chunk size measured in MB utilized in the transfer")
-mychunksize=int(sys.argv[2]) * 1024 * 1024    
+    sys.exit(0)
+mychunksize=int(sys.argv[2]) * 1024 * 1024
 print(calculate_s3_etag(sys.argv[1],mychunksize))
