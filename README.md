@@ -5,7 +5,7 @@ Using the metadata for a multi-part uploaded file, the chunk size can be roughly
 
 This can then be utilized with this script to calculate the summary etag for comparrison with the online object. 
 
-NOTE: This will not work on objects placed in encrypted buckets
+NOTE: This will not work on objects placed in encrypted buckets as the md5 sums are made of the encrypted data, not the unencrypted.
 
 Future enhancements that anyone can contribute to this repo are:
 - performance improvements
